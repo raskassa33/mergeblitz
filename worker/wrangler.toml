@@ -1,0 +1,19 @@
+name = "mergeblitz-bot"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+# Create this with: wrangler kv namespace create MERGEBLITZ_KV
+# Then paste the returned id below.
+kv_namespaces = [
+  { binding = "MERGEBLITZ_KV", id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+]
+
+[vars]
+# URL where you host the webapp/ folder (GitHub Pages, Cloudflare Pages, Vercel — all free).
+WEBAPP_URL = "https://YOUR_USERNAME.github.io/mergeblitz/"
+# Your bot's @username, without the @.
+BOT_USERNAME = "your_bot_username"
+
+# BOT_TOKEN is a secret, NOT set here.
+# Set it after creating the worker with:
+#   wrangler secret put BOT_TOKEN

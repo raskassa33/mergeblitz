@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>MergeBlitz</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <!--
+    ====== EDIT THESE TWO LINES AFTER YOU DEPLOY THE WORKER ======
+    API_BASE: your Cloudflare Worker URL + /api  (see /worker/README section in root README)
+    BOT_USERNAME: your bot's @username without the @  (used for the Share button)
+  -->
+  <script>
+    window.MERGEBLITZ_API_BASE = 'https://mergeblitz-bot.YOUR_SUBDOMAIN.workers.dev/api';
+    window.MERGEBLITZ_BOT_USERNAME = 'your_bot_username';
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="score-box">
+        <span class="label">SCORE</span>
+        <span id="score">0</span>
+      </div>
+      <div class="meter">
+        <div id="meter-fill"></div>
+      </div>
+    </header>
+
+    <main>
+      <canvas id="board" aria-label="MergeBlitz game board"></canvas>
+    </main>
+
+    <footer>
+      <button id="daily-btn" class="mode-btn">Daily Challenge</button>
+      <button id="endless-btn" class="mode-btn active">Endless</button>
+    </footer>
+
+    <div id="overlay" class="hidden">
+      <div class="card">
+        <h2 id="overlay-title">Run over</h2>
+        <p class="big-score">Score: <span id="overlay-score">0</span></p>
+        <div id="overlay-leaderboard" class="mini-leaderboard"></div>
+        <div class="overlay-actions">
+          <button id="share-btn" class="primary">Share</button>
+          <button id="retry-btn">Play again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

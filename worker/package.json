@@ -1,0 +1,14 @@
+{
+  "name": "mergeblitz-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MergeBlitz Telegram bot + score/leaderboard API, deployed as a single Cloudflare Worker.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
